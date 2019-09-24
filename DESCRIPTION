@@ -1,0 +1,21 @@
+Package: dodv
+Title: R Package for Scraping and Analysing DODV Rank Lists
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Michael",
+             family = "Rustler",
+             role = c("aut", "cre"),
+             email = "michael.rustler@kompetenz-wasser.de",
+             comment = c(ORCID = "0000-0003-0647-7726")),
+      person(given = "Michael Rustler",
+             role = "cph"))
+Description: Scrape and analyse year ranks lists of German
+    Opti-Dinghy Federation (DODV) available at:
+    <https://segler-rangliste.de/dodv>.
+License: MIT + file LICENSE
+URL: https://github.com/KWB-R/dodv
+BugReports: https://github.com/KWB-R/dodv/issues
+Suggests: 
+    covr
+Encoding: UTF-8
+LazyData: true
