@@ -9,9 +9,11 @@ calculate_rank_points(rank, number_of_boats, regatta_factor)
 \arguments{
 \item{rank}{total rank of a boat in a regatta}
 
-\item{number_of_boats}{}
+\item{number_of_boats}{number of boast at least one time reaching the 
+finish line}
 
-\item{regatta_factor}{}
+\item{regatta_factor}{DODV quality factor of regatta. Varies between 
+1.0 and 1.45 (for DODV German Opti A championchip)}
 }
 \value{
 DODV rank points
@@ -24,5 +26,5 @@ calculate_rank_points(10, 70, 1.2)
 calculate_rank_points(3, 30, 1.0)
 }
 \references{
-\href{http://www.dodv.org/regatta/rangliste/ranglisten-regelung/}
+\url{http://www.dodv.org/regatta/rangliste/ranglisten-regelung/}
 }

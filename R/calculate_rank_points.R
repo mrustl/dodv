@@ -12,7 +12,7 @@
 #' @examples
 #' calculate_rank_points(10, 70, 1.2)
 #' calculate_rank_points(3, 30, 1.0)
-#' @references \href{http://www.dodv.org/regatta/rangliste/ranglisten-regelung/}
+#' @references \url{http://www.dodv.org/regatta/rangliste/ranglisten-regelung/}
 #' 
 calculate_rank_points <- function(rank, number_of_boats, regatta_factor) {
   

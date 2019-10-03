@@ -16,8 +16,16 @@ License: MIT + file LICENSE
 URL: https://github.com/mrustl/dodv
 BugReports: https://github.com/mrustl/dodv/issues
 Imports: 
+    data.table,
+    dplyr, 
+    janitor,
     magrittr,
-    RSelenium
+    rlang,
+    RSelenium,
+    rvest,
+    stringr,
+    tibble,
+    xml2
 Suggests: 
     covr
 Encoding: UTF-8
