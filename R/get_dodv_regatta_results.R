@@ -37,12 +37,12 @@ regatta_master <-  tibble::tibble(
       rvest::html_node(xpath = "//div[@class='panel-body']//tr[3]//td[1]") %>% 
       rvest::html_text() %>% 
       stringr::str_trim() %>% 
-      ifelse(.data == "", NA_character_, .data), # or "." instead of ".data" ???
+      ifelse(. == "", NA_character_, .), # or "." instead of ".data" ???
     regatta_cups = html_content %>%  
       rvest::html_node(xpath = "//td[@class='col-lg-1 angular-with-newlines ng-binding']") %>% 
       rvest::html_text() %>% 
       stringr::str_trim() %>%  
-      ifelse(.data == "", NA_character_, .data), # or "." instead of ".data" ???
+      ifelse(. == "", NA_character_, .), # or "." instead of ".data" ???
     regatta_boats = html_content %>%  
       rvest::html_node(xpath = "/html[1]/body[1]/div[2]/div[1]/div[3]/div[4]/div[1]/div[2]/table[1]/tbody[1]/tr[5]/td[1]") %>% 
       rvest::html_text() %>% 
@@ -54,7 +54,6 @@ regatta_master <-  tibble::tibble(
       stringr::str_trim()
     )
   
-regatta_master[,regatta_master == ""] <- NA_character_
   
   results[[2]][-1,] %>% janitor::clean_names() %>%  
     dplyr::mutate(segel = stringr::str_remove_all(.data$segel, "\\s+?"))  
