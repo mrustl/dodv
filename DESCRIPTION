@@ -28,6 +28,7 @@ Imports:
     xml2
 Suggests: 
     covr,
+    curl,
     knitr,
     rmarkdown
 Encoding: UTF-8
