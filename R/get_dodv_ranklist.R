@@ -6,12 +6,12 @@
 #' @export
 #'
 click_more <- function(sleep_time) {
-  is_available <- ifelse(xml2::read_html(rs$client$getPageSource()[[1]]) %>%  
+  is_available <- ifelse(xml2::read_html(rs$getPageSource()[[1]]) %>%  
                            rvest::html_node(xpath = "//span[contains(text(),'500')]") %>% 
                            rvest::html_text() %>%  is.na(), FALSE, TRUE)
   
   if(is_available) {
-    get_500 <- rs$client$findElement(using = "xpath", value = "//span[contains(text(),'500')]")
+    get_500 <- rs$findElement(using = "xpath", value = "//span[contains(text(),'500')]")
     get_500$clickElement()
     Sys.sleep(sleep_time)
   }
@@ -34,23 +34,23 @@ get_dodv_ranklist <- function(url = "https://segler-rangliste.de/dodv/#/opti-a-g
                               dbg = TRUE) {
 
 if (dbg) message(sprintf("Getting ranklist from: %s", url))
-rs$client$navigate(url)
+rs$navigate(url)
 Sys.sleep(time = sleep_time)
 click_more(sleep_time)
 
-dodv_ranks_html <- xml2::read_html(rs$client$getPageSource()[[1]])
+dodv_ranks_html <- xml2::read_html(rs$getPageSource()[[1]])
 
-my_opts <- rs$client$findElement(using = 'xpath', "//select")$selectTag()
+my_opts <- rs$findElement(using = 'xpath', "//select")$selectTag()
 my_opts$text
 
-select_options <- rs$client$findElements(using = 'xpath', "//*/option[@value]")
+select_options <- rs$findElements(using = 'xpath', "//*/option[@value]")
 if(all_years == FALSE) select_options <- select_options[1]
 data.table::rbindlist(lapply(seq_along(select_options), function(year_id) {
   if (dbg) message(sprintf("Getting ranklist for year: %s", my_opts$text[year_id]))
   select_options[[year_id]]$clickElement()
   Sys.sleep(time = sleep_time)
   click_more(sleep_time) 
-  dodv_ranks_html <- xml2::read_html(rs$client$getPageSource()[[1]])
+  dodv_ranks_html <- xml2::read_html(rs$getPageSource()[[1]])
   dodv_ranks_tbl1 <- dodv_ranks_html %>%  rvest::html_nodes("table") %>%  rvest::html_table(header = TRUE)
   
   tmp <- if(nrow(dodv_ranks_tbl1[[1]])>1) {

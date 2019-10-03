@@ -21,11 +21,6 @@ library(dodv)
 ```{r }
 #rs <- RSelenium::rsDriver(browser = "firefox", geckover = "0.25.0")
 rs <- RSelenium::remoteDriver()
-rs$open()
-rs$navigate("https://segler-rangliste.de/dodv/#/opti-a-ger")
-```
-
-```[r eval = FALSE]
 
 dodv_ger_a <- get_dodv_ranklist("https://segler-rangliste.de/dodv/#/opti-a-ger", 
                                 all_years = FALSE)

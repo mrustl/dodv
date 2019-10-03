@@ -13,9 +13,9 @@
 #'
 get_dodv_regatta_results <- function(url) {
 
-  rs$client$navigate(url)
+  rs$navigate(url)
   Sys.sleep(2)
-  html_content <- xml2::read_html(rs$client$getPageSource()[[1]]) 
+  html_content <- xml2::read_html(rs$getPageSource()[[1]]) 
   results <- html_content %>%  
     rvest::html_nodes("table") %>%  rvest::html_table(header = TRUE, fill  = TRUE)
   
@@ -72,9 +72,9 @@ regatta_master <-  tibble::tibble(
 #'
 get_dodv_regatta_overview <- function(url) {
   
-  rs$client$navigate(url)
+  rs$navigate(url)
   
-  results <- xml2::read_html(rs$client$getPageSource()[[1]]) %>%  
+  results <- xml2::read_html(rs$getPageSource()[[1]]) %>%  
     rvest::html_nodes("table") %>%  rvest::html_table(header = TRUE, fill  = TRUE)
   
   
