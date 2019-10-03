@@ -1,6 +1,24 @@
+---
+title: "Analyse"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{analyse}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
 library(dodv)
+```
 
-
+```{r }
 #rs <- RSelenium::rsDriver(browser = "firefox", geckover = "0.25.0")
 rs <- RSelenium::remoteDriver(browserName = "chrome", port = 4444L)
 
@@ -23,3 +41,4 @@ dplyr::inner_join(herbst19_registiations[,"segel", drop=FALSE], dodv_ger_a) %>% 
 
 calculate_regatta_factor(c(56, 82.69, 67.75))
 
+```

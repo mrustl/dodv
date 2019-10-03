@@ -38,3 +38,4 @@ rsconnect/
 
 # and deploys the website to "gh-pages" branch
 docs
+inst/doc
