@@ -4,15 +4,12 @@
 \alias{raceoffice_registrations}
 \title{raceoffice: get regatta registrations}
 \usage{
-
-  raceoffice_registrations(url = paste0("https://www.manage2sail.com/de-DE/event/",
-  "5b69e6bf-d50a-4536-a203-54e90bd8320d#!/entries?classId=ba596ce5-2827",
-  "-4b97-8fa4-568ca20659cb"))
+raceoffice_registrations(url = paste0("http://www.raceoffice.org/",
+  "entrylist.php?eid=11498618335c794171f0ae7"))
 }
 \arguments{
-\item{url}{url (default: paste0("https://www.manage2sail.com/de-DE/event/", 
-"5b69e6bf-d50a-4536-a203-54e90bd8320d#!/entries?classId=ba596ce5-2827", 
-"-4b97-8fa4-568ca20659cb"))}
+\item{url}{url (default: paste0("http://www.raceoffice.org/",
+"entrylist.php?eid=11498618335c794171f0ae7"))}
 }
 \value{
 tibble with registrations for regatta

@@ -1,8 +1,7 @@
 #' raceoffice: get regatta registrations
 #'
-#' @param url url (default: paste0("https://www.manage2sail.com/de-DE/event/", 
-#' "5b69e6bf-d50a-4536-a203-54e90bd8320d#!/entries?classId=ba596ce5-2827", 
-#' "-4b97-8fa4-568ca20659cb"))
+#' @param url url (default: paste0("http://www.raceoffice.org/",
+#' "entrylist.php?eid=11498618335c794171f0ae7"))
 #' @importFrom tibble tibble
 #' @importFrom janitor clean_names
 #' @importFrom dplyr rename mutate
@@ -10,9 +9,8 @@
 #' @export
 #'
 raceoffice_registrations <- function(
-  url = paste0("https://www.manage2sail.com/de-DE/event/", 
-               "5b69e6bf-d50a-4536-a203-54e90bd8320d#!/entries?classId=ba596ce5-2827", 
-               "-4b97-8fa4-568ca20659cb")) {
+  url = paste0("http://www.raceoffice.org/", 
+               "entrylist.php?eid=11498618335c794171f0ae7")) {
   
   tbl_raw <- xml2::read_html(url) %>% 
   rvest::html_table(fill = TRUE)
