@@ -28,12 +28,13 @@ rs$open()
 # With docker
 #shell("docker pull selenium/standalone-firefox:3.141.59")
 #shell("docker run -d -p 4445:4444 selenium/standalone-firefox:3.141.59")
+#rs <- RSelenium::remoteDriver()
+#rs$open()
+
 
 # Without docker 
 rs_serverclient <- RSelenium::rsDriver(browser = "firefox", geckover = "0.25.0")
 rs <- rs_serverclient$client
-
-rs <- RSelenium::remoteDriver()
 rs$open()
 
 ```
