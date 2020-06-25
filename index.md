@@ -1,5 +1,5 @@
 [![Appveyor build Status](https://ci.appveyor.com/api/projects/status/github/mrustl/dodv?branch=master&svg=true)](https://ci.appveyor.com/project/mrustl/dodv/branch/master)
-[![Travis build Status](https://travis-ci.org/mrustl/dodv.svg?branch=master)](https://travis-ci.org/mrustl/dodv)
+[![Travis build Status](https://travis-ci.com/mrustl/dodv.svg?branch=master)](https://travis-ci.org/mrustl/dodv)
 [![codecov](https://codecov.io/github/mrustl/dodv/branch/master/graphs/badge.svg)](https://codecov.io/github/mrustl/dodv)
 [![Project Status](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/dodv)]()
